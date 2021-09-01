@@ -4,20 +4,41 @@ import { useState, useEffect } from "react";
 import Card from "../components/Card";
 
 const Home = () => {
-    const [planetas, setPlanetas] = useState([]);
+    // STATES
+    const [planets, setPlanets] = useState([]);
+    const [peoples, setPeoples] = useState([]);
 
+    // GET PEOPLE
+    useEffect(() => {
+        fetch("https://swapi.dev/api/people/", {
+            method: "GET",
+            headers: { "Content-Type": "application/json" }
+        }).then(response => response.json())
+            .then(data => setPeoples(data.results))
+    }, [])
+
+    // GET PLANETS
     useEffect(() => {
         fetch("https://swapi.dev/api/planets/", {
             method: "GET",
             headers: { "Content-Type": "application/json" }
         }).then(response => response.json())
-            .then(data => setPlanetas(data.results))
+            .then(data => setPlanets(data.results))
     }, [])
+
     return (
         <>
-            <h1>Planets</h1>
-            <div className="scrolling-wrapper">
-                {planetas.map((planeta, i) => <Card data={planeta} />)}
+            <div className="row">
+                <h1>Characters</h1>
+                <div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2 mb-4">
+                    {peoples.map((people, i) => <div className="col-md-3"><Card data={people} image="https://isccoquimbo.cl/images/400X200.gif" /></div>)}
+                </div>
+            </div>
+            <div className="row">
+                <h1>Planets</h1>
+                <div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
+                    {planets.map((planet, i) => <div className="col-md-3"><Card data={planet} image="https://isccoquimbo.cl/images/400X200.gif" /></div>)}
+                </div>
             </div>
         </>
     );
