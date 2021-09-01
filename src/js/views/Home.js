@@ -36,7 +36,7 @@ const Home = () => {
             </div>
             <div className="row">
                 <h1>Planets</h1>
-                <div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
+                <div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2 mb-4">
                     {planets.map((planet, i) => <div className="col-md-3"><Card data={planet} image="https://isccoquimbo.cl/images/400X200.gif" /></div>)}
                 </div>
             </div>
