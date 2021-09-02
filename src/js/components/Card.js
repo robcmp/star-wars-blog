@@ -7,9 +7,9 @@ const Card = (props) => {
             <img src={props.image} className="card-img-top" alt="" />
             <div className="card-body">
                 <h5 className="card-title">{props.data.name}</h5>
-                <p className="card-text">{(/people/g).test(props.data.url) === true ? <span>Gender: {props.data.gender}</span> : ((/planets/g).test(props.data.url) === true ? <span>Population: {props.data.population}</span> : "")}</p>
-                <p className="card-text">{(/people/g).test(props.data.url) === true ? <span>Hair-color: {props.data.hair_color}</span> : ((/planets/g).test(props.data.url) === true ? <span>Terrain: {props.data.terrain}</span> : <span>Model: {props.data.model}</span>)}</p>
-                <p className="card-text">{(/people/g).test(props.data.url) === true ? <span>Eyes-color: {props.data.eye_color}</span> : ""}</p>
+                <p className="card-text mb-1">{(/people/g).test(props.data.url) === true ? <span>Gender: {props.data.gender}</span> : ((/planets/g).test(props.data.url) === true ? <span>Population: {props.data.population}</span> : "")}</p>
+                <p className="card-text mb-1">{(/people/g).test(props.data.url) === true ? <span>Hair-color: {props.data.hair_color}</span> : ((/planets/g).test(props.data.url) === true ? <span>Terrain: {props.data.terrain}</span> : <span>Model: {props.data.model}</span>)}</p>
+                <p className="card-text mb-1">{(/people/g).test(props.data.url) === true ? <span>Eyes-color: {props.data.eye_color}</span> : ""}</p>
             </div>
             <div className="card-footer text-center row">
                 <div class="col-md-8">
