@@ -2,6 +2,7 @@ import React from "react";
 import '../css/Home.css';
 import { useState, useEffect } from "react";
 import Card from "../components/Card";
+import { Context } from "../store/appContext";
 
 const Home = () => {
     // STATES
