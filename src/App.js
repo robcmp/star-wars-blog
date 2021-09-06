@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import injectContext from './js/store/appContext';
 import Layout from './js/components/Layout';
