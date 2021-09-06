@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Home from "../views/Home";
+import Details from "../views/Details";
 import Navbar from "./Navbar";
 
 
@@ -11,6 +12,9 @@ const Layout = () => {
             <Switch>
                 <Route exact path="/">
                     <Home />
+                </Route>
+                <Route path="/detail/:url" component={Details}>
+                    <Details />
                 </Route>
                 <Route render={() => <h1>Not found</h1>}></Route>
             </Switch>
