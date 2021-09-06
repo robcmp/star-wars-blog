@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
+// ${(/people/g).test(props.data.url) === true ? props.data.url : ((/planets/g).test(props.data.url) === true ? props.data.url : props.data.url)}
 const Card = (props) => {
-
+    let urlVal = "";
+    const { store, actions } = useContext(Context);
     return (
         <div className="card">
             <img src={props.image} className="card-img-top" alt="" />
@@ -12,11 +16,11 @@ const Card = (props) => {
                 <p className="card-text mb-1">{(/people/g).test(props.data.url) === true ? <span>Eyes-color: {props.data.eye_color}</span> : ""}</p>
             </div>
             <div className="card-footer text-center row">
-                <div class="col-md-8">
-                    <button className="btn btn-primary"> Find Out More!</button>
+                <div className="col-md-8">
+                    <Link className="btn btn-primary" to={`/detail/${(/people/g).test(props.data.url) === true ? `${props.data.url.replace(/\//g, "_")}` : ((/planets/g).test(props.data.url) === true ? String(props.data.url.replace(/\//g, "_")) : props.data.url.replace(/\//g, "_"))}`}>Learn more!</Link>
                 </div>
-                <div class="col-md-4">
-                    <button className="btn btn-outline-warning"><i class="bi bi-heart"></i></button>
+                <div className="col-md-4">
+                    <button className="btn btn-outline-warning" onClick={actions.addFavorite}><i className="bi bi-heart"></i></button>
                 </div>
             </div>
         </div>
