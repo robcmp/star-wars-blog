@@ -14,13 +14,15 @@ export const getState = ({ setStore, getStore, getActions }) => {
                     // deleteTask(key);
                 }}><i class="bi bi-x"></i></button></span></li>)
             },
-            getDetail: (ev) => {
+            getDetail: (a) => {
                 const store = getStore();
-                fetch(store, {
-                    method: "GET",
-                    headers: { "Content-Type": "application/json" }
-                }).then(response => response.json())
-                    .then(data => setStore({ details: data.results }))
+                // console.log('hola back' + a + '');
+                console.log(store.details);
+                // fetch(a, {
+                //     method: "GET",
+                //     headers: { "Content-Type": "application/json" }
+                // }).then(response => response.json())
+                //     .then(data => setStore({ details: data.results }))
 
             }
         }
