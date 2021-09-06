@@ -3,7 +3,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
     return {
         store: {
             favoriteList: [],
-            details: []
+            details: null
         },
         actions: {
             addFavorite: (ev) => {
@@ -14,16 +14,53 @@ export const getState = ({ setStore, getStore, getActions }) => {
                     // deleteTask(key);
                 }}><i class="bi bi-x"></i></button></span></li>)
             },
-            getDetail: (a) => {
+            getDetailChar: (a) => {
                 const store = getStore();
+                let url = 'https://swapi.dev/api/people/' + a;
+                console.log(url);
                 // console.log('hola back' + a + '');
-                console.log(store.details);
-                // fetch(a, {
-                //     method: "GET",
-                //     headers: { "Content-Type": "application/json" }
-                // }).then(response => response.json())
-                //     .then(data => setStore({ details: data.results }))
+                fetch(url, {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json" }
+                }).then(response => response.json())
+                    .then(data => {
 
+                        setStore({ details: JSON.stringify(data.results) });
+                        console.log(store.details);
+
+                    })
+            },
+            getDetailPlanet: (a) => {
+                const store = getStore();
+                let url = 'https://swapi.dev/api/planets/' + a;
+                console.log(url);
+                // console.log('hola back' + a + '');
+                fetch(url, {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json" }
+                }).then(response => response.json())
+                    .then(data => {
+
+                        setStore({ details: JSON.stringify(data.results) });
+                        console.log(store.details);
+
+                    })
+            },
+            getDetailVehic: (a) => {
+                const store = getStore();
+                let url = 'https://swapi.dev/api/vehicles/' + a;
+                console.log(url);
+                // console.log('hola back' + a + '');
+                fetch(url, {
+                    method: "GET",
+                    headers: { "Content-Type": "application/json" }
+                }).then(response => response.json())
+                    .then(data => {
+
+                        setStore({ details: JSON.stringify(data.results) });
+                        console.log(store.details);
+
+                    })
             }
         }
     };
