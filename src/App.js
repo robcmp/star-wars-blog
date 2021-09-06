@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import injectContext from './js/store/appContext';
 import Layout from './js/components/Layout';
+
 
 function App() {
   return (
@@ -8,4 +10,4 @@ function App() {
   );
 }
 
-export default App;
+export default injectContext(App);
