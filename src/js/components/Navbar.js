@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
-const Navbar = () => {
+const Navbar = (props) => {
+    const { store, action } = useContext(Context);
     return <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
             <Link className="navbar-brand" to="/">Navbar</Link>
@@ -18,10 +20,13 @@ const Navbar = () => {
                             Dropdown
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="#">Action</a></li>
-                            <li><a className="dropdown-item" href="#">Another action</a></li>
-                            <li><hr className="dropdown-divider" /></li>
-                            <li><a className="dropdown-item" href="#">Something else here</a></li>
+                            <li>
+                                {/* {action.addFavorite(props)} */}
+                            </li>
+
+
+
+
                         </ul>
                     </div>
                 </div>
