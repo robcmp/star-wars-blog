@@ -6,17 +6,18 @@ export const getState = ({ setStore, getStore, getActions }) => {
             details: {}
         },
         actions: {
-            addFavorite: (ev) => {
+            addFavorite: (item) => {
                 const store = getStore();
-                const listElement = store.favoriteList.concat(favoriteItem)
+                const listElement = store.favoriteList.concat(item);
                 setStore({ favoriteList: listElement });
+                // console.log(store.favoriteList);
+
             },
             getDetailChar: (a) => {
                 const store = getStore();
                 const actions = getActions();
                 let url = 'https://swapi.dev/api/people/' + a;
-                console.log(a);
-                // console.log('hola back' + a + '');
+
                 fetch(url)
                     .then(response => response.json())
                     .then(data =>
@@ -27,8 +28,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
                 const store = getStore();
                 const actions = getActions();
                 let url = 'https://swapi.dev/api/planets/' + a;
-                console.log(url);
-                // console.log('hola back' + a + '');
+
                 fetch(url)
                     .then(response => response.json())
                     .then(data => {
@@ -39,8 +39,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
                 const store = getStore();
                 const actions = getActions();
                 let url = 'https://swapi.dev/api/vehicles/' + a;
-                console.log(url);
-                // console.log('hola back' + a + '');
+
                 fetch(url)
                     .then(response => response.json())
                     .then(data => {
