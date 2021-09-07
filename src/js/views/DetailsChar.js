@@ -5,8 +5,6 @@ import { Context } from "../store/appContext";
 const DetailsChars = (props) => {
     const { store, actions } = useContext(Context);
     const params = useParams();
-    // let urlVal = "";
-    // urlVal = "people/" + params.id;
 
     useEffect(() => {
         actions.getDetailChar(params.id);
