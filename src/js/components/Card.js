@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -6,6 +6,14 @@ import { Context } from "../store/appContext";
 const Card = (props) => {
     let urlVal = "";
     const { store, actions } = useContext(Context);
+
+
+    const addToList = () => {
+        let nameFav = props.data.name;
+        console.log(nameFav);
+        actions.addFavorite(nameFav);
+    }
+
     return (
         <div className="card">
             <img src={props.image} className="card-img-top" alt="" />
@@ -20,10 +28,10 @@ const Card = (props) => {
                     <Link className="btn btn-primary" to={`${(/people/g).test(props.data.url) === true ? `/detailchar/${props.data.url.match(/\d/g)}` : ((/planets/g).test(props.data.url) === true ? `/detailplanet/${props.data.url.match(/\d/g)}` : `/detailvehic/${props.data.url.match(/\d/g)}`)}`}>Learn more!</Link>
                 </div>
                 <div className="col-md-4">
-                    <button className="btn btn-outline-warning" onClick={actions.addFavorite}><i className="bi bi-heart"></i></button>
+                    <button className="btn btn-outline-warning" onClick={() => addToList()}><i className="bi bi-heart"></i></button>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
 
