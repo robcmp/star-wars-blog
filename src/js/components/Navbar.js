@@ -3,7 +3,16 @@ import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const Navbar = (props) => {
-    const { store, action } = useContext(Context);
+    const { store, actions } = useContext(Context);
+    const deleteTask = (key) => {
+        let listUpdated = store.favoriteList.filter((item, index) => {
+            if (index !== key) {
+                return item;
+            }
+        })
+        actions.addFavorite(listUpdated);
+    }
+
     return <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container-fluid">
             <Link className="navbar-brand" to="/">Navbar</Link>
@@ -14,17 +23,17 @@ const Navbar = (props) => {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
                 </ul>
-                <div className="d-flex">
+                <div className="d-flex me-5">
                     <div className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
+                            Favorites {store.favoriteList.length}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li>
-                                {/* {action.addFavorite(props)} */}
-                            </li>
-
-
+                            <li className="dropdown-item">Hola</li>
+                            {store.favoriteList.map((item, index) => <li className="dropdown-item" key={index}>{item}<span className="ps-5"><button onClick={() => {
+                                deleteTask(index);
+                            }}><i className="bi bi-x"></i></button></span></li>)
+                            }
 
 
                         </ul>
