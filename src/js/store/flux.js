@@ -8,11 +8,8 @@ export const getState = ({ setStore, getStore, getActions }) => {
         actions: {
             addFavorite: (ev) => {
                 const store = getStore();
-                setStore([...store.favoriteList, store]);
-                console.log(ev.target);
-                store.map((li, key) => <li className="dropdown-item" key={key} >{li}<span className="ps-5"><button onClick={() => {
-                    // deleteTask(key);
-                }}><i class="bi bi-x"></i></button></span></li>)
+                const listElement = store.favoriteList.concat(favoriteItem)
+                setStore({ favoriteList: listElement });
             },
             getDetailChar: (a) => {
                 const store = getStore();
