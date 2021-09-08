@@ -10,7 +10,7 @@ const Navbar = (props) => {
 
     return <nav className="navbar navbar-expand-lg navbar-light bg-dark">
         <div className="container-fluid">
-            <Link className="navbar-brand" to="/"><img src="https://logos-download.com/wp-content/uploads/2016/09/Star_Wars_logo_black.png" alt="..." height="40"/></Link>
+            <Link className="navbar-brand ms-5" to="/"><img src={'img/sw.png'} alt="..." height="45"/></Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
