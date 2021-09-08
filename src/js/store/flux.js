@@ -8,11 +8,21 @@ export const getState = ({ setStore, getStore, getActions }) => {
         actions: {
             addFavorite: (item) => {
                 const store = getStore();
-                const listElement = store.favoriteList.concat(item);
-                setStore({ favoriteList: listElement });
-                // console.log(store.favoriteList);
-
+                const actions = getActions();
+                if (!store.favoriteList.includes(item)) {
+					setStore({ favoriteList: [...store.favoriteList, item] });
+				} else {
+					const array = store.favoriteList;
+					const condition = currentFavorite => currentFavorite === item;
+					let index = array.findIndex(condition);
+					if (index > -1) actions.removeFavorite(index);
+				}
             },
+            removeFavorite: favoriteIndex => {
+                const store = getStore();
+				store.favoriteList.splice(favoriteIndex, 1);
+                setStore({ favoriteList: store.favoriteList });
+			},
             getDetailChar: (a) => {
                 const store = getStore();
                 const actions = getActions();
