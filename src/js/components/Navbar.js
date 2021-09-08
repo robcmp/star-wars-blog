@@ -24,7 +24,7 @@ const Navbar = (props) => {
                             Favorites {store.favoriteList.length}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            {(store.favoriteList.length===0) ? <li className="dropdown-item">loading...</li>: 
+                            {(store.favoriteList.length===0) ? <li className="dropdown-item text-center">(empty)</li>: 
                             store.favoriteList.map((item, index) => <li className="dropdown-item" key={index}>{item}<span className="ps-5"><button onClick={() => {
                                 deleteTask(index);
                             }}><i className="bi bi-x"></i></button></span></li>)}
