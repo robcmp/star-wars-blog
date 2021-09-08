@@ -42,19 +42,19 @@ const Home = () => {
             <div className="row">
                 <h1>Characters</h1>
                 <div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2 mb-4">
-                    {peoples.map((people, i) => <div className="col-md-3"><Card data={people} image="https://isccoquimbo.cl/images/400X200.gif" /></div>)}
+                    {peoples.map((people, i) => <div className="col-md-3"><Card data={people} image="https://via.placeholder.com/400x200" /></div>)}
                 </div>
             </div>
             <div className="row">
                 <h1>Planets</h1>
                 <div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2 mb-4">
-                    {planets.map((planet, i) => <div className="col-md-3"><Card data={planet} image="https://isccoquimbo.cl/images/400X200.gif" /></div>)}
+                    {planets.map((planet, i) => <div className="col-md-3"><Card data={planet} image="https://via.placeholder.com/400x200" /></div>)}
                 </div>
             </div>
             <div className="row">
                 <h1>Vehicles</h1>
                 <div className="scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2 mb-4">
-                    {vehicles.map((vehicle, i) => <div className="col-md-3"><Card data={vehicle} image="https://isccoquimbo.cl/images/400X200.gif" /></div>)}
+                    {vehicles.map((vehicle, i) => <div className="col-md-3"><Card data={vehicle} image="https://via.placeholder.com/400x200" /></div>)}
                 </div>
             </div>
         </>
