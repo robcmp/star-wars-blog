@@ -5,12 +5,7 @@ import { Context } from "../store/appContext";
 const Navbar = (props) => {
     const { store, actions } = useContext(Context);
     const deleteTask = (key) => {
-        let listUpdated = store.favoriteList.filter((item, index) => {
-            if (index !== key) {
-                return item;
-            }
-        })
-        actions.addFavorite(listUpdated);
+        actions.removeFavorite(key);
     }
 
     return <nav className="navbar navbar-expand-lg navbar-light bg-light">
