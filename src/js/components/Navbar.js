@@ -8,9 +8,9 @@ const Navbar = (props) => {
         actions.removeFavorite(key);
     }
 
-    return <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    return <nav className="navbar navbar-expand-lg navbar-light bg-dark">
         <div className="container-fluid">
-            <Link className="navbar-brand" to="/">Navbar</Link>
+            <Link className="navbar-brand" to="/"><img src="https://logos-download.com/wp-content/uploads/2016/09/Star_Wars_logo_black.png" alt="..." height="40"/></Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -19,16 +19,16 @@ const Navbar = (props) => {
 
                 </ul>
                 <div className="d-flex me-5">
-                    <div className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div className="nav-item dropdown btn-primary rounded-3">
+                        <a className="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Favorites {store.favoriteList.length}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li className="dropdown-item">Hola</li>
-                            {store.favoriteList.map((item, index) => <li className="dropdown-item" key={index}>{item}<span className="ps-5"><button onClick={() => {
+                            {(store.favoriteList.length===0) ? <li className="dropdown-item">loading...</li>: 
+                            store.favoriteList.map((item, index) => <li className="dropdown-item" key={index}>{item}<span className="ps-5"><button onClick={() => {
                                 deleteTask(index);
-                            }}><i className="bi bi-x"></i></button></span></li>)
-                            }
+                            }}><i className="bi bi-x"></i></button></span></li>)}
+                           
 
 
                         </ul>
