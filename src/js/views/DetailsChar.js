@@ -11,7 +11,7 @@ const DetailsChars = (props) => {
     // }
     useEffect(() => {
         actions.getDetailChar(params.id);
-    }, [actions.getDetailChar])
+    })
 
     return (
         <div className="p-5 mb-4 bg-light rounded-3 bg-dark mt-5">
