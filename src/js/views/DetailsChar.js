@@ -6,8 +6,11 @@ const DetailsChars = (props) => {
     const { store, actions } = useContext(Context);
     const params = useParams();
 
-    useEffect(() => {
+    const fetchDetails = () =>{
         actions.getDetailChar(params.id);
+    }
+    useEffect(() => {
+        fetchDetails();
     }, [])
 
     return (
