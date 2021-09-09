@@ -20,9 +20,9 @@ const Navbar = (props) => {
                 </ul>
                 <div className="d-flex me-5">
                     <div className="nav-item dropdown btn-primary rounded-3">
-                        <a className="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div className="nav-link dropdown-toggle text-white" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Favorites {store.favoriteList.length}
-                        </a>
+                        </div>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                             {(store.favoriteList.length===0) ? <li className="dropdown-item text-center">(empty)</li>: 
                             store.favoriteList.map((item, index) => <li className="dropdown-item" key={index}>{item}<span className="ps-5"><button onClick={() => {
