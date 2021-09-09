@@ -1,4 +1,4 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
@@ -22,12 +22,14 @@ const Card = (props) => {
                 <p className="card-text mb-1">{(/people/g).test(props.data.url) === true ? <span>Hair-color: {props.data.hair_color}</span> : ((/planets/g).test(props.data.url) === true ? <span>Terrain: {props.data.terrain}</span> : <span>Model: {props.data.model}</span>)}</p>
                 <p className="card-text mb-1">{(/people/g).test(props.data.url) === true ? <span>Eyes-color: {props.data.eye_color}</span> : ""}</p>
             </div>
-            <div className="card-footer text-center row">
-                <div className="col-md-8">
-                    <Link className="btn btn-primary" to={`${(/people/g).test(props.data.url) === true ? `/detailchar/${props.data.url.match(/\d/g)}` : ((/planets/g).test(props.data.url) === true ? `/detailplanet/${props.data.url.match(/\d/g)}` : `/detailvehic/${props.data.url.match(/\d/g)}`)}`}>Learn more!</Link>
-                </div>
-                <div className="col-md-4">
-                    <button className="btn btn-outline-warning" onClick={() => addToList()}><i className="bi bi-heart"></i></button>
+            <div className="card-footer text-center ">
+                <div className="row">
+                    <div className="col-md-8">
+                        <Link className="btn btn-primary" to={`${(/people/g).test(props.data.url) === true ? `/detailchar/${props.data.url.match(/\d/g)}` : ((/planets/g).test(props.data.url) === true ? `/detailplanet/${props.data.url.match(/\d/g)}` : `/detailvehic/${props.data.url.match(/\d/g)}`)}`}>Learn more!</Link>
+                    </div>
+                    <div className="col-md-4">
+                        <button className="btn btn-outline-warning" onClick={() => addToList()}><i className="bi bi-heart"></i></button>
+                    </div>
                 </div>
             </div>
         </div >
