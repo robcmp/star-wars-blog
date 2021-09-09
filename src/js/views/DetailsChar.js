@@ -6,12 +6,12 @@ const DetailsChars = (props) => {
     const { store, actions } = useContext(Context);
     const params = useParams();
 
-    const fetchDetails = () =>{
-        actions.getDetailChar(params.id);
-    }
+    // const fetchDetails = () =>{
+    //     actions.getDetailChar(params.id);
+    // }
     useEffect(() => {
-        fetchDetails();
-    }, [store.details])
+        actions.getDetailChar(params.id);
+    }, [actions.getDetailChar])
 
     return (
         <div className="p-5 mb-4 bg-light rounded-3 bg-dark mt-5">
