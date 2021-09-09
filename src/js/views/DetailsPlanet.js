@@ -8,7 +8,7 @@ const DetailsPlanet = (props) => {
 
     useEffect(() => {
         actions.getDetailPlanet(params.id);
-    }, [])
+    })
 
     return (
         <div className="p-4 p-md-5 mb-4 text-white rounded bg-dark">

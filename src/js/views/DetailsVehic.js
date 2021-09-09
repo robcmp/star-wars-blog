@@ -8,7 +8,7 @@ const DetailsVehic = (props) => {
 
     useEffect(() => {
         actions.getDetailVehic(params.id);
-    }, [])
+    })
 
     return (
         <div className="p-4 p-md-5 mb-4 text-white rounded bg-dark">

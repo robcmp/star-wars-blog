@@ -5,10 +5,7 @@ import { Context } from "../store/appContext";
 const DetailsChars = (props) => {
     const { store, actions } = useContext(Context);
     const params = useParams();
-
-    // const fetchDetails = () =>{
-    //     actions.getDetailChar(params.id);
-    // }
+    
     useEffect(() => {
         actions.getDetailChar(params.id);
     })
