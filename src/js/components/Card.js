@@ -1,11 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 // ${(/people/g).test(props.data.url) === true ? props.data.url : ((/planets/g).test(props.data.url) === true ? props.data.url : props.data.url)}
 const Card = (props) => {
-    let urlVal = "";
-    const { store, actions } = useContext(Context);
+    const { actions } = useContext(Context);
 
 
     const addToList = () => {
