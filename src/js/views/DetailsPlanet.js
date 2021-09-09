@@ -15,7 +15,7 @@ const DetailsPlanet = (props) => {
             <div className="col-md-6 px-0">
                 <h1 className="fst-italic">{store.details.name ? store.details.name : 'chau'}</h1>
                 <p className="lead my-3">Likn this post’s contents.</p>
-                <p className="lead mb-0"><a href="#" className="text-white fw-bold">Continue reading.</a></p>
+                <p className="lead mb-0"><a href="#/" className="text-white fw-bold">Continue reading.</a></p>
             </div>
         </div>
     )
