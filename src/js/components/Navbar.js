@@ -20,7 +20,7 @@ const Navbar = (props) => {
                 </ul>
                 <div className="d-flex me-5">
                     <div className="nav-item dropdown btn-primary rounded-3">
-                        <a className="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a className="nav-link dropdown-toggle text-white" href="#/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Favorites {store.favoriteList.length}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
