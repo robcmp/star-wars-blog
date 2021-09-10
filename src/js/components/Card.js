@@ -25,7 +25,7 @@ const Card = (props) => {
             <div className="card-footer text-center ">
                 <div className="row">
                     <div className="col-md-8">
-                        <Link className="btn btn-primary" to={`${(/people/g).test(props.data.url) === true ? `/detailchar/${props.data.url.match(/\d/g)}` : ((/planets/g).test(props.data.url) === true ? `/detailplanet/${props.data.url.match(/\d/g)}` : `/detailvehic/${props.data.url.match(/\d/g)}`)}`}>Learn more!</Link>
+                        <Link className="btn btn-primary" to={`${(/people/g).test(props.data.url) === true ? `/detailchar/${props.data.url.match(/\d+/g)}` : ((/planets/g).test(props.data.url) === true ? `/detailplanet/${props.data.url.match(/\d+/g)}` : `/detailvehic/${props.data.url.match(/\d+/g)}`)}`}>Learn more!</Link>
                     </div>
                     <div className="col-md-4">
                         <button className="btn btn-outline-warning" onClick={() => addToList()}><i className="bi bi-heart"></i></button>
