@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 const DetailsChars = (props) => {
     const { store, actions } = useContext(Context);
     const params = useParams();
-    
+
     useEffect(() => {
         actions.getDetailChar(params.id);
     })
@@ -24,15 +24,19 @@ const DetailsChars = (props) => {
                 </div>
                 <div className='row text-light mt-3'>
                     <div className="col-md-3">
+                        <h3>Height:</h3>
                         {store.details.height}
                     </div>
                     <div className="col-md-3">
+                        <h3>Mass:</h3>
                         {store.details.mass}
                     </div>
                     <div className="col-md-3">
+                        <h3>Hair Color:</h3>
                         {store.details.hair_color}
                     </div>
                     <div className="col-md-3">
+                        <h3>Eyes Color:</h3>
                         {store.details.eye_color}
                     </div>
                 </div>
