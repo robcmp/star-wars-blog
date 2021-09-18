@@ -11,11 +11,37 @@ const DetailsPlanet = (props) => {
     })
 
     return (
-        <div className="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-            <div className="col-md-6 px-0">
-                <h1 className="fst-italic">{store.details.name ? store.details.name : 'chau'}</h1>
-                <p className="lead my-3">Likn this post’s contents.</p>
-                <p className="lead mb-0"><a href="#/" className="text-white fw-bold">Continue reading.</a></p>
+        <div className="p-5 mb-4 bg-light rounded-3 bg-dark mt-5">
+            <div className="container-fluid py-5">
+                <div className="row">
+                    <div className="col-md-6">
+                        <img src="https://via.placeholder.com/800x600" className="img-fluid" alt="" />
+                    </div>
+                    <div className="col-md-6">
+                        <h1 className="display-5 fw-bold text-light">{store.details.name}</h1>
+                        <p className="col-md-8 fs-4 text-light">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+                    </div>
+                </div>
+                <div className='row text-light mt-3'>
+                    <div className="col-md-3">
+                        <h3>Diameter:</h3>
+                        {store.details.diameter}
+                    </div>
+                    <div className="col-md-3">
+                        <h3>Climate:</h3>
+                        {store.details.climate}
+                    </div>
+                    <div className="col-md-3">
+                        <h3>Terrain:</h3>
+                        {store.details.terrain}
+                    </div>
+                    <div className="col-md-3">
+                        <h3>Population:</h3>
+                        {store.details.population}
+                    </div>
+                </div>
+
+
             </div>
         </div>
     )
