@@ -25,7 +25,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
 			},
             getDetailChar: (a) => {
                 const actions = getActions();
-                let url = 'https://swapi.dev/api/people/' + a;
+                let url = 'https://swapi.info/api/people/' + a;
 
                 fetch(url)
                     .then(response => response.json())
@@ -35,7 +35,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
             },
             getDetailPlanet: (a) => {
                 const actions = getActions();
-                let url = 'https://swapi.dev/api/planets/' + a;
+                let url = 'https://swapi.info/api/planets/' + a;
 
                 fetch(url)
                     .then(response => response.json())
@@ -45,7 +45,7 @@ export const getState = ({ setStore, getStore, getActions }) => {
             },
             getDetailVehic: (a) => {
                 const actions = getActions();
-                let url = 'https://swapi.dev/api/vehicles/' + a;
+                let url = 'https://swapi.info/api/vehicles/' + a;
 
                 fetch(url)
                     .then(response => response.json())
